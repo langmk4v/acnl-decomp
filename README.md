@@ -75,3 +75,12 @@ python3 build.py TEST.c
  ---
 
 
+# 関数の追加
+ 
+ファイル名 = `(6 桁のアドレス).c` <br>
+
+ファイルの先頭に `#pragma once` を書くようにしてください。<br>
+
+メモリの読み書き部分は全て `READxx(addr)` `WRITExx(addr)` に書き換えてください。<br>
+( これにより FAKE_MEMORY.bin に対する読み書きになります ) <br>
+
