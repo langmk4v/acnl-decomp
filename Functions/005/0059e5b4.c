@@ -1,10 +1,16 @@
-#include "types.h"
-
 /* WARNING: Unable to use type for symbol puVar1 */
 
 //
 // PlaceItem
 //
+
+#include "002/002fc878.c"
+#include "002/002fc8bc.c"
+#include "005/0059fa6c.c"
+#include "005/0059e8f8.c"
+#include "005/0059ebe8.c"
+
+extern u32 DAT_0059e738;
 
 int
 FUN_0059e5b4(
@@ -26,13 +32,13 @@ FUN_0059e5b4(
   local_2c = ItemPtr2;
   local_28 = ItemPtr3;
 
-  FUN_002fc878(DAT_0059e738, ItemPtr);
-  FUN_002fc878(puVar1 + 2, local_2c);
-  FUN_002fc878(puVar1 + 4, local_28);
+  FUN_002fc878((u16*)DAT_0059e738, (u16*)ItemPtr);
+  FUN_002fc878((u16*)(puVar1 + 2), (u16*)local_2c);
+  FUN_002fc878((u16*)(puVar1 + 4), (u16*)local_28);
 
   *(undefined1 *)(puVar1 + 6) = param_5;
-  *(undefined1 *)((int)puVar1 + 0xd) = param_6;
-  *(undefined1 *)((int)puVar1 + 0xf) = 1;
+  *(undefined1 *)((u32)puVar1 + 0xd) = param_6;
+  *(undefined1 *)((u32)puVar1 + 0xf) = 1;
   *(char *)(puVar1 + 7) = (char)local_34;
 
   *(u8*)((int)puVar1 + 0x11) =

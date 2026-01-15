@@ -1,24 +1,26 @@
-# TID: 0x86200
+# タイトル ID: 0x86200
 
-Contributers:
+参加者:
 - zkr
 - SSSCFW
+- やくるん
 
-# How to use?
+# 使い方
 
-1. Create `test.cpp` like this code:
+1. `test.c` を作成して以下の要領で記述する
 ```cpp
 #include "types.h"
 
-u32 DAT_00XXYYZZ; // <-- Fake of memory.
+u32 DAT_00XXYYZZ; // <-- フェイクメモリ
 
-#include "./Functions/005/0059e5b4.c" // file to you want to test
+#include "./Functions/005/0059e5b4.c" // テストしたい関数
 
 int main() {
 
-  FUN_0059e5b4( ... );  // Call any function
+  FUN_0059e5b4( ... );  // 呼ぶ
   
 }
 ```
 
-2. Compile and let's test rom-func !
+2. コンパイル `./b.sh` <br>
+ARMv6 バイナリにビルドされるので、qemu とかを使って実行してください。

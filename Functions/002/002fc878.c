@@ -1,4 +1,4 @@
-
+#pragma once
 
 // Copy u32 block with u16 pointer (?)
 
