@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "types.h"
 #include "RAM_FAKE.h"
 
@@ -10,7 +12,9 @@
 
 int YourCode() {
 
-  FUN_0059e5b4();
+  u32 Item = 0x2117;
+
+  FUN_0059e5b4(0xA, &Item, &Item, &Item, 0x20, 0x30, 0, 0, 0, 0, 0);
 
   return 0;
 }
