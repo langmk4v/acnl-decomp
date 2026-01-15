@@ -1,7 +1,10 @@
 *.txt
 *.out
 *.elf
+*.bin
 
 test.*
 
 /ignores
+
+/BIN_LOADER

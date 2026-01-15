@@ -1,0 +1,1 @@
+gcc -std=c17 -O3 -Iinclude ./utils/BIN_LOADER.c -o BIN_LOADER
