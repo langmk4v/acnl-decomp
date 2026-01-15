@@ -20,15 +20,15 @@ FUN_0059e5b4(
   undefined2 *local_28;
   undefined2 *puVar1;
   
-  puVar1 = DAT_0059e738;
+  puVar1 = (u32*)DAT_0059e738;
   local_34 = DropType;
   puStack_30 = ItemPtr;
   local_2c = ItemPtr2;
   local_28 = ItemPtr3;
 
-  FUN_002fc878(DAT_0059e738,param_2);
-  FUN_002fc878(puVar1 + 2,local_2c);
-  FUN_002fc878(puVar1 + 4,local_28);
+  FUN_002fc878(DAT_0059e738, ItemPtr);
+  FUN_002fc878(puVar1 + 2, local_2c);
+  FUN_002fc878(puVar1 + 4, local_28);
 
   *(undefined1 *)(puVar1 + 6) = param_5;
   *(undefined1 *)((int)puVar1 + 0xd) = param_6;

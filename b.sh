@@ -1,0 +1,1 @@
+g++ -std=c17 test.c -I.
