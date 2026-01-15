@@ -1,0 +1,1 @@
+clang -std=c17 -O3 BIN_LOADER.c -o BIN_LOADER
