@@ -1,1 +1,1 @@
-clang -std=c17 -O3 BIN_LOADER.c -o BIN_LOADER
+gcc -std=c17 -O3 -Iinclude ./utils/BIN_LOADER.c -o BIN_LOADER
