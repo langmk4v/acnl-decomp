@@ -1,12 +1,19 @@
+#include "types.h"
 
 /* WARNING: Unable to use type for symbol puVar1 */
 
-undefined4
-FUN_0059e5b4(undefined4 DropType,undefined2 *param_2,undefined2 *param_3,undefined2 *param_4,
-            undefined1 param_5,undefined1 param_6,byte param_7,byte param_8,byte param_9,
-            byte param_10,char param_11)
+//
+// PlaceItem
+//
+
+int
+FUN_0059e5b4(
+    u8 DropType,
+    u32 *ItemPtr,u32 *ItemPtr2,u32 *ItemPtr3,
+    u32 param_5,u32 param_6, u8 param_7, u8 param_8, u8 param_9,
+    u8 param_10, char param_11)
 {
-  uint auStack_50 [7];
+  u32 auStack_50 [7];
   undefined4 local_34;
   undefined2 *puStack_30;
   undefined2 *local_2c;
@@ -14,10 +21,10 @@ FUN_0059e5b4(undefined4 DropType,undefined2 *param_2,undefined2 *param_3,undefin
   undefined2 *puVar1;
   
   puVar1 = DAT_0059e738;
-  local_34 = dropType;
-  puStack_30 = param_2;
-  local_2c = param_3;
-  local_28 = param_4;
+  local_34 = DropType;
+  puStack_30 = ItemPtr;
+  local_2c = ItemPtr2;
+  local_28 = ItemPtr3;
 
   FUN_002fc878(DAT_0059e738,param_2);
   FUN_002fc878(puVar1 + 2,local_2c);
@@ -28,7 +35,7 @@ FUN_0059e5b4(undefined4 DropType,undefined2 *param_2,undefined2 *param_3,undefin
   *(undefined1 *)((int)puVar1 + 0xf) = 1;
   *(char *)(puVar1 + 7) = (char)local_34;
 
-  *(byte *)((int)puVar1 + 0x11) =
+  *(u8*)((int)puVar1 + 0x11) =
     (param_10 & 1) << 5 | (param_9 & 7) << 2
       | (param_8 & 1) << 1 | param_7 & 1 | param_11 << 6;
 
