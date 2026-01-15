@@ -25,10 +25,11 @@ void FakeRAM_Close() {
   fclose(_g_fakeram_bin_fp);
 }
 
-#define  _WRITER_DEF_(NAME, TYPE) \
+#define  _WRITER_DEF_(NAME, TYPE, FMT) \
   TYPE NAME(u32 addr, TYPE value) { \
     fseek( _g_fakeram_bin_fp, addr, SEEK_SET ); \
     fwrite( &value, sizeof(TYPE), 1, _g_fakeram_bin_fp ); \
+    printf("WRITE " #TYPE " (%X, " FMT ")\n", addr, value); \
     return value; \
   }
 
@@ -37,18 +38,19 @@ void FakeRAM_Close() {
     fseek( _g_fakeram_bin_fp, addr, SEEK_SET ); \
     TYPE value; \
     fread( &value, sizeof(TYPE), 1, _g_fakeram_bin_fp ); \
+    printf("READ " #TYPE " (%X)\n", addr); \
     return value; \
   }
 
-_WRITER_DEF_(WRITEU8, u8);
-_WRITER_DEF_(WRITEU16, u16);
-_WRITER_DEF_(WRITEU32, u32);
-_WRITER_DEF_(WRITEU64, u64);
+_WRITER_DEF_(WRITEU8, u8, "%X");
+_WRITER_DEF_(WRITEU16, u16, "%X");
+_WRITER_DEF_(WRITEU32, u32, "%X");
+_WRITER_DEF_(WRITEU64, u64, "%LX");
 
 _READER_DEF_(READU8, u8);
 _READER_DEF_(READU16, u16);
 _READER_DEF_(READU32, u32);
 _READER_DEF_(READU64, u64);
 
-_WRITER_DEF_(WRITEFLOAT, float);
+_WRITER_DEF_(WRITEFLOAT, float, "%f");
 _READER_DEF_(READFLOAT, float);

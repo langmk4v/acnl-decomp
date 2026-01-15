@@ -3,7 +3,7 @@
 #include "002/2f75cc.c"
 #include "003/305f6c.c"
 
-void FUN_0059ebe8(undefined2 *param_1, undefined2 *param_2,
+void FUN_0059ebe8(undefined2 *param_1, u16 *param_2,
                   byte param_3) {
   byte bVar1;
   byte bVar2;

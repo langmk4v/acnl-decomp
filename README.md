@@ -39,6 +39,7 @@ dd if=/dev/zero of=FAKE_MEMORY.bin bs=100MiB count=10
 ## 2: ダンプしたメモリを読み取る
 CTRPF の Gateway RAM Dumper でメモリをダンプして、<br>
 そのバイナリファイルを `BIN_LOADER` を使用してフェイクメモリに適用します。<br>
+書き込むアドレスは実際のゲームのアドレスと同じにします。<br>
 **ダンプされたメモリの先頭にある余分な領域に注意してください。**
 ```
 # バイナリローダーをビルド
@@ -53,13 +54,13 @@ $ ./BINLOADER <ダンプしたバイナリ> <読み込む位置> <サイズ> <�
 $ ./BINLOADER rom.bin 0x14 0 0x100000
 ```
 
-## 3: `TEST.c` を編集する
+## 3: `PROGRAM/TEST.c` を編集する
 使いたい関数の `#include` と 関数 `YourCode()` 内だけ書き換えれば OK
 
 ## 4: コンパイル <br>
 アーキテクチャは 3DS と同じになっています。（なってるはず。多分。）
 ```
-python3 build.py TEST.c
+python3 build.py
 ```
 
 ## 5: 実行
